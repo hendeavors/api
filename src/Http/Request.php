@@ -23,6 +23,13 @@ class Request extends IlluminateRequest implements RequestInterface
     protected $accept;
 
     /**
+     * The route resolver callback.
+     *
+     * @var \Closure
+     */
+    protected $routeResolver;
+
+    /**
      * Create a new Dingo request instance from an Illuminate request instance.
      *
      * @param \Illuminate\Http\Request $old
@@ -80,6 +87,18 @@ class Request extends IlluminateRequest implements RequestInterface
         $this->parseAcceptHeader();
 
         return $this->accept['format'] ?: parent::format($default);
+    }
+
+    /**
+     * Set the route resolver callback.
+     *
+     * @param  \Closure  $callback
+     * @return $this
+     */
+    public function setRouteResolver(Closure $callback)
+    {
+        $this->routeResolver = $callback;
+        return $this;
     }
 
     /**

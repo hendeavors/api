@@ -9,9 +9,9 @@ use Dingo\Api\Contract\Debug\ExceptionHandler;
 use Dingo\Api\Contract\Debug\MessageBagErrors;
 use Symfony\Component\HttpFoundation\Response as BaseResponse;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use Illuminate\Contracts\Debug\ExceptionHandler as IlluminateExceptionHandler;
+//use Illuminate\Contracts\Debug\ExceptionHandler as IlluminateExceptionHandler;
 
-class Handler implements ExceptionHandler, IlluminateExceptionHandler
+class Handler implements ExceptionHandler
 {
     /**
      * Array of exception handlers.

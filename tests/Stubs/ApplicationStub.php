@@ -3,9 +3,9 @@
 namespace Dingo\Api\Tests\Stubs;
 
 use Illuminate\Container\Container;
-use Illuminate\Contracts\Foundation\Application;
+use ArrayAccess;
 
-class ApplicationStub extends Container implements Application
+class ApplicationStub extends Container implements ArrayAccess
 {
     public function version()
     {
